@@ -2,8 +2,12 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import Link from 'next/link'
+import { useRouter } from 'next/dist/client/router'
+import Header from '@/components/header'
 
 const Home: NextPage = () => {
+	const router = useRouter()
 	return (
 		<div className={styles.container}>
 			<Head>
@@ -11,6 +15,16 @@ const Home: NextPage = () => {
 				<meta name="description" content="Learn NextJS + Typescript with fun :P" />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
+			
+			<button onClick={() => {
+				router.push({
+					pathname: '/post/[postId]',
+					query: {
+                        postId: 1,
+						cek: 2
+                    }
+				})
+			}}>Go to post</button>
 
 			<main className={styles.main}>
 				<h1 className={styles.title}>
