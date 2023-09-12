@@ -8,10 +8,8 @@ const axiosClient = axios.create({
 })
 
 // Add a response interceptor
-axios.interceptors.response.use(
+axiosClient.interceptors.response.use(
 	function (response) {
-        console.log('3')
-
 		// Any status code that lie within the range of 2xx cause this function to trigger
 		// Do something with response data
 		return response.data
