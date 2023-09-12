@@ -17,6 +17,8 @@ export default function handler(req: NextApiRequest, res: NextApiResponse<any>) 
 	if (req.method !== 'POST') {
 		return res.status(404).json({ message: 'method not supported' })
 	}
+    console.log('logout 4')
+
 	const cookies = new Cookies(req, res)
 	cookies.set('access_token')
 

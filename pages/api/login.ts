@@ -18,6 +18,8 @@ export default function handler(req: NextApiRequest, res: NextApiResponse<any>) 
 		return res.status(404).json({ message: 'method not supported' })
 	}
 	return new Promise((resolve, reject) => {
+        console.log('login 4')
+
 		// don't send cookies to API server
 		req.headers.cookie = ''
 

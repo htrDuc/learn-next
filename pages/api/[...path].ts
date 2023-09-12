@@ -15,6 +15,7 @@ export const config = {
 
 export default function handler(req: NextApiRequest, res: NextApiResponse<any>) {
 	return new Promise((resolve, reject) => {
+    console.log('path 4')
     // convert cookies to header Authorization
     const cookies = new Cookies(req,res)
     const accessToken = cookies.get('access_token')
