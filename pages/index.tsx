@@ -5,11 +5,13 @@ import styles from '../styles/Home.module.css'
 import Link from 'next/link'
 import { useRouter } from 'next/dist/client/router'
 import Header from '@/components/header'
+import { MainLayout } from '@/layout'
+import { NextPageWithLayout } from '@/models'
 
-const Home: NextPage = () => {
+const Home: NextPageWithLayout = () => {
 	const router = useRouter()
 	return (
-		<div className={styles.container}>
+		<>
 			<Head>
 				<title>Learn NextJS | Easy Frontend</title>
 				<meta name="description" content="Learn NextJS + Typescript with fun :P" />
@@ -73,8 +75,10 @@ const Home: NextPage = () => {
 					</span>
 				</a>
 			</footer>
-		</div>
+		</>
 	)
 }
+
+Home.Layout = MainLayout
 
 export default Home

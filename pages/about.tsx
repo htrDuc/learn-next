@@ -1,10 +1,12 @@
+import { AdminLayout, MainLayout } from '@/layout';
+import { NextPageWithLayout } from '@/models';
 import { GetServerSideProps, GetServerSidePropsContext, GetStaticProps, GetStaticPropsContext } from 'next';
 import * as React from 'react';
 
 export interface IAboutProps {
 }
 
-export default function About (props: IAboutProps) {
+const About: NextPageWithLayout<IAboutProps> = (props: IAboutProps) => {
   return (
     <div>
       About
@@ -13,9 +15,13 @@ export default function About (props: IAboutProps) {
 }
 
 export const getServerSideProps: GetServerSideProps<IAboutProps> = async (context: GetServerSidePropsContext) => {
-    await new Promise((resolve) => setTimeout(resolve, 3000))
+    await new Promise((resolve) => setTimeout(resolve))
 	return {
 		props: {
 		},
 	}
 }
+
+About.Layout = MainLayout
+
+export default About
