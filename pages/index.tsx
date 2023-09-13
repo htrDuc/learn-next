@@ -1,12 +1,10 @@
-import type { NextPage } from 'next'
+import { MainLayout } from '@/layout'
+import { NextPageWithLayout } from '@/models'
+import { useRouter } from 'next/dist/client/router'
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import Link from 'next/link'
-import { useRouter } from 'next/dist/client/router'
-import Header from '@/components/header'
-import { MainLayout } from '@/layout'
-import { NextPageWithLayout } from '@/models'
+import { Typography } from '@mui/material'
 
 const Home: NextPageWithLayout = () => {
 	const router = useRouter()
@@ -29,9 +27,10 @@ const Home: NextPageWithLayout = () => {
 			}}>Go to post</button>
 
 			<main className={styles.main}>
-				<h1 className={styles.title}>
+				<Typography component="h1" color="primary.main">
 					Welcome to <a href="https://youtube.com/easyfrontend">Easy Frontend</a>
-				</h1>
+
+				</Typography>
 
 				<p className={styles.description}>
 					Get started by editing <code className={styles.code}>pages/index.js</code>

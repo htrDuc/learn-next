@@ -22,6 +22,6 @@ export const getServerSideProps: GetServerSideProps<IAboutProps> = async (contex
 	}
 }
 
-About.Layout = MainLayout
+About.Layout = AdminLayout
 
 export default About
